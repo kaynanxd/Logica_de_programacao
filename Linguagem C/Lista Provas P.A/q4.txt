@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdio.h>
+
+int main() {
+    //declarar variaveis
+    int pedido[5],i;
+    float total=0;
+    printf(" Pão: R$ 5,50 \n Leite: R$ 6,25 \n Queijo: R$ 3,30 \n Presunto: R$ 4,00 \n Achocolatado: R$ 5,00 \n quanto de cada vc quer ? " );
+    
+    //inserir numero de pedidos
+    for(i=0;i<5;i++){
+        scanf("%d",&pedido[i]);
+    }
+    //somar tudo e imprimir
+    total=(pedido[0]*5.50)+
+          (pedido[1]*6.25)+
+          (pedido[2]*3.30)+
+          (pedido[3]*4.00)+
+          (pedido[4]*5.00);
+    printf("o total do pedido e %.2f ",total);
+    
+    
+    return 0;
+}

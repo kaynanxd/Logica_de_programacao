@@ -1,0 +1,31 @@
+#include<stdlib.h>
+#include<stdio.h>
+
+int main(){
+    
+    int carro[3][3]={3,2,1,5,6,4,4,3,5},contador,contador2,temp,linha,coluna,i,j;
+    
+    for(linha=0;linha<3;linha++){
+        for(coluna=0;coluna<3;coluna++){
+            for(i=0;i<3;i++){
+               for(j=0;j<3;j++){
+               if(carro[linha][coluna]>carro[i][j]){
+                
+                temp=carro[i][j];
+                carro[i][j]=carro[linha][coluna];
+                carro[linha][coluna]=temp;
+            }
+        }}}
+    }
+    
+    
+    for(linha=0;linha<3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<3;coluna++)
+        printf("%d ",carro[linha][coluna]);
+    }
+    
+    
+    
+    return 0;
+}

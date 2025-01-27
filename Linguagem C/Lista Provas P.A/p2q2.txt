@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n, linha, coluna, soma = 0, soma2=0;
+
+    printf("Digite a quantidade de linhas e colunas): \n");
+    scanf("%d", &n);
+
+    int a[n][n];
+
+    // scanear matriz
+    printf("Digite os elementos da matriz:\n");
+    for (linha = 0; linha < n; linha++) {
+        for (coluna = 0; coluna < n; coluna++) {
+            scanf("%d", &a[linha][coluna]);
+        }
+    }
+
+    // Soma da diagonal principal
+    for (linha = 0; linha < n; linha++) {
+        soma += a[linha][linha];
+    }
+    
+    // Soma da diagonal secundaria
+    for (linha = 0; linha < n; linha++) {
+        soma2 += a[linha][n-linha-1];
+    }
+
+    printf("Soma da diagonal principal: %d e secundaria %d",soma,soma2);
+
+    return 0;
+}

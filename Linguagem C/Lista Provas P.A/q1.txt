@@ -1,0 +1,29 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    
+    //declarar lista de valores e contador
+    float carros[5]={150500.50,70300.75,77200.00,220299.99,79999.99};
+    int contador,j,temp;
+    
+    //varrer lista com bubble sort para ordenar
+    for(contador=0;contador<5;contador++){
+        for(j=contador;j<5;j++){
+            if(carros[contador]>carros[j]){
+                temp=carros[j];
+                carros[j]=carros[contador];
+                carros[contador]=temp;
+            }
+        }
+        
+    }
+    
+     for(contador=0;contador<5;contador++){
+        printf("%.2f \n",carros[contador]); 
+     }
+     printf("o carro mais barato e %f", carros[0]);
+    
+    
+    return 0;
+}

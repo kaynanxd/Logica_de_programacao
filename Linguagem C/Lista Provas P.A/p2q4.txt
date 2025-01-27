@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int rodada,num,chute,resultado,j2=0,j1=0;
+    
+    
+    for(rodada=0;rodada<6;rodada++){
+        
+        if(rodada%2==0){
+        printf("\n");
+        scanf(" %d",&num);
+        scanf(" %d",&chute);
+        resultado = num%2;
+        if(chute==resultado){
+            printf("j2 acertou ");
+            j2++;
+        }
+        else{
+            printf("j2 errou ");
+            j1++;
+        }
+        }
+
+    else{
+        printf("\n");
+        scanf(" %d",&num);
+        scanf(" %d",&chute);
+        resultado=num%2;
+        if(chute==resultado){
+            printf("j1 acerto ");
+            j1++;
+        }
+        else{
+            printf("j1 errou ");
+            j2++;
+        }
+        
+    }
+    
+    }
+    
+    printf("resultado de j1= %d resultado de j2= %d ",j1,j2);
+    if(j1>j2){
+        printf("j1 venceu");
+    }
+    else if(j1<j2){
+        printf("j2 venceu");
+    }
+    else{
+        printf("empate");
+    }
+    
+    
+    return 0;
+}

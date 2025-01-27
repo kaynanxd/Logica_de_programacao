@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    
+    int a[2][2]={9,4,5,1},i,j,k,l,temp;
+    
+    for(i=0;i<2;i++){
+           for(j=0;j<2;j++){
+             for(k=0;k<2;k++){
+                for(l=0;l<2;l++){
+            if(a[i][j]>a[k][l]){
+                temp=a[k][l];
+                a[k][l]=a[i][j];
+                a[i][j]=temp;
+             }
+          }
+         }
+        }
+      } 
+    
+    for(i=0;i<2;i++){
+        
+    for(j=0;j<2;j++){
+        printf("%d ",a[i][j]);
+    }
+    } 
+    
+    
+    return 0;
+}

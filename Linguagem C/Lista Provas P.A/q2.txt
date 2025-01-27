@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    // Definindo a matriz com os gastos das 4 semanas
+    int matriz[4][7] = {
+        {23, 13, 67, 23, 13, 53, 78},
+        {12, 65, 22, 89, 42, 11, 86},
+        {12, 43, 15, 78, 43, 14, 64},
+        {12, 89, 54, 12, 90, 54, 23}
+    };
+
+    // Variáveis para controle das linhas, colunas e soma por semana
+    int linha, coluna, temp, somasemana[4] = {0}, maisalto = -9999, semanaMaisCara = -1;
+
+    // Imprimir a matriz original
+    printf("Matriz original:\n");
+    for (linha = 0; linha < 4; linha++) {
+        for (coluna = 0; coluna < 7; coluna++) {
+            printf("%d ", matriz[linha][coluna]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // Ordenar a matriz e calcular a soma por semana
+    for (linha = 0; linha < 4; linha++) {
+        // Ordenação da linha em ordem crescente
+        for (coluna = 0; coluna < 7; coluna++) {
+            for (int j = coluna + 1; j < 7; j++) {
+                if (matriz[linha][coluna] > matriz[linha][j]) {
+                    // Troca de valores
+                    temp = matriz[linha][coluna];
+                    matriz[linha][coluna] = matriz[linha][j];
+                    matriz[linha][j] = temp;
+                }
+            }
+        }
+
+        // Imprimir a matriz ordenada e calcular a soma dos gastos da semana
+        for (coluna = 0; coluna < 7; coluna++) {
+            printf("%d ", matriz[linha][coluna]);
+            somasemana[linha] += matriz[linha][coluna];  // Somando os valores da semana
+        }
+        printf("\n");
+    }
+
+    // Verificar qual semana teve o maior gasto
+    for (linha = 0; linha < 4; linha++) {
+        if (somasemana[linha] > maisalto) {
+            maisalto = somasemana[linha];
+            semanaMaisCara = linha + 1;  // Adicionando 1 para indicar a semana (1 a 4)
+        }
+    }
+
+    // Imprimir qual semana teve o maior gasto
+    printf("\nA semana com maior gasto foi a semana %d com um total de %d.\n", semanaMaisCara, maisalto);
+
+    return 0;
+}
